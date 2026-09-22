@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cozy Study Island & Room Builder</title>
+    <title>Cozy Study Island & Room Builder Pro</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,17 +164,14 @@
 </head>
 <body class="min-h-screen bg-cozy-bg dark:bg-cozy-darkBg text-cozy-brown dark:text-cozy-darkText flex flex-col md:flex-row overflow-x-hidden pb-20 md:pb-0">
 
-    <!-- Cozy Background Soft Glows -->
     <div class="cozy-glow-1"></div>
     <div class="cozy-glow-2"></div>
 
-    <!-- Toast Notifications -->
     <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
 
     <!-- Sidebar Navigation -->
     <aside class="hidden md:flex w-64 bg-cozy-green dark:bg-cozy-darkGreen text-white p-5 flex-col justify-between z-30 sticky top-0 h-screen shadow-xl rounded-r-3xl">
         <div>
-            <!-- Header & Dark Mode -->
             <div class="flex items-center justify-between px-2 py-3 mb-6 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm">
                 <div class="flex items-center gap-2.5">
                     <div class="w-10 h-10 rounded-2xl bg-cozy-yellow flex items-center justify-center text-xl shadow-inner">🍃</div>
@@ -188,7 +185,6 @@
                 </button>
             </div>
 
-            <!-- Profile Summary Widget -->
             <div onclick="switchTab('profile', this)" class="bg-white/10 p-3.5 rounded-2xl mb-6 flex items-center gap-3 border border-white/15 cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm">
                 <div class="relative">
                     <div id="sidebar-avatar-container" class="w-12 h-12 rounded-full bg-cozy-yellow flex items-center justify-center text-2xl shadow overflow-hidden border-2 border-white/40">
@@ -208,7 +204,6 @@
                 </div>
             </div>
 
-            <!-- Nav Links -->
             <nav class="space-y-2">
                 <button onclick="switchTab('dashboard', this)" class="nav-btn w-full flex items-center gap-3 px-4 py-2.5 rounded-2xl font-bold text-xs transition-all bg-cozy-yellow text-stone-900 shadow-md">
                     <i data-lucide="home" class="w-4 h-4"></i> Home Dashboard
@@ -251,10 +246,8 @@
         <button onclick="toggleDarkMode()" class="mobile-nav-btn text-cozy-yellow flex flex-col items-center gap-0.5 p-1"><i data-lucide="moon" class="w-5 h-5"></i><span class="text-[9px] font-bold">Theme</span></button>
     </div>
 
-    <!-- Main Content Container -->
     <main class="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full space-y-6 relative z-10">
 
-        <!-- REMINDER BANNER -->
         <div id="reminder-banner" class="hidden cozy-card p-4 bg-amber-500/10 border-amber-500/30 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <span class="text-2xl">🔔</span>
@@ -266,7 +259,7 @@
             <button onclick="switchTab('homework')" class="px-3 py-1.5 rounded-xl bg-amber-500 text-white font-bold text-xs shadow hover:bg-amber-600">Review Now</button>
         </div>
 
-        <!-- ================= PAGE 1: DASHBOARD ================= -->
+        <!-- PAGE 1: DASHBOARD -->
         <section id="page-dashboard" class="page-content space-y-6">
             <div class="cozy-card p-6 md:p-8 relative overflow-hidden bg-gradient-to-r from-emerald-50 via-amber-50 to-orange-50 dark:from-stone-900 dark:via-emerald-950/40 dark:to-stone-900 border-2 border-emerald-200 dark:border-emerald-900">
                 <div class="relative z-10 max-w-xl space-y-3">
@@ -282,7 +275,6 @@
                 <div class="absolute right-4 bottom-2 text-7xl md:text-9xl opacity-20 select-none pointer-events-none">🏡</div>
             </div>
 
-            <!-- Stats Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="cozy-card p-4"><p class="text-xs text-slate-500 dark:text-slate-400 font-bold">Study Time</p><h3 class="text-xl md:text-2xl font-bold text-cozy-brown dark:text-amber-100 mt-1" id="dash-hours">0.0 hrs</h3></div>
                 <div class="cozy-card p-4"><p class="text-xs text-slate-500 dark:text-slate-400 font-bold">Pending Tasks</p><h3 class="text-xl md:text-2xl font-bold text-cozy-accent mt-1" id="dash-hw-count">0 Items</h3></div>
@@ -290,7 +282,6 @@
                 <div class="cozy-card p-4"><p class="text-xs text-slate-500 dark:text-slate-400 font-bold">Daily Streak</p><h3 class="text-xl md:text-2xl font-bold text-cozy-green dark:text-emerald-400 mt-1" id="dash-streak">1 Day</h3></div>
             </div>
 
-            <!-- Smart Study Advice Widget -->
             <div class="cozy-card p-5 space-y-2 bg-gradient-to-r from-amber-50/50 to-emerald-50/50 dark:from-stone-900 dark:to-stone-900">
                 <div class="flex items-center justify-between">
                     <h3 class="font-bold text-xs text-cozy-green dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">💡 Daily Study Advice & Tip</h3>
@@ -299,7 +290,6 @@
                 <p id="advice-text" class="text-xs md:text-sm font-semibold text-cozy-brown dark:text-amber-100 italic">"Break your large assignments into 25-minute chunks using the Pomodoro technique to avoid burnout."</p>
             </div>
 
-            <!-- Homework Quick Overview -->
             <div class="cozy-card p-5 space-y-3">
                 <div class="flex justify-between items-center">
                     <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100 flex items-center gap-2">✍️ Homework & Page Overview</h3>
@@ -309,16 +299,16 @@
             </div>
         </section>
 
-        <!-- ================= PAGE 2: HOMEWORK ================= -->
+        <!-- PAGE 2: HOMEWORK -->
         <section id="page-homework" class="page-content hidden space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">Homework Notebook</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Organize assigned pages, key points, and export everything into one paper summary sheet!</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Organize assigned pages, edit key notes, and export summary sheets!</p>
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <button onclick="exportAllHomeworkPaper()" class="px-4 py-2.5 rounded-2xl bg-amber-600 text-white font-bold text-xs shadow hover:bg-amber-700 transition-all flex items-center gap-1.5">
-                        <i data-lucide="file-text" class="w-4 h-4"></i> Export One-Page Paper Summary
+                        <i data-lucide="file-text" class="w-4 h-4"></i> Export Summary Paper
                     </button>
                     <button onclick="openModal('modal-add-hw')" class="px-4 py-2.5 rounded-2xl bg-cozy-green text-white font-bold text-xs shadow hover:bg-emerald-800 transition-all flex items-center gap-1.5">
                         <i data-lucide="plus" class="w-4 h-4"></i> Add Homework / Pages
@@ -341,12 +331,12 @@
             <div id="homework-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         </section>
 
-        <!-- ================= PAGE 3: TO-DO & QUESTS ================= -->
+        <!-- PAGE 3: TO-DO & QUESTS -->
         <section id="page-quests" class="page-content hidden space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">Daily Quests & Tasks</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Finish study quests to earn coins for room building!</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Finish study quests to earn automatic random XP & coins!</p>
                 </div>
                 <button onclick="openModal('modal-add-quest')" class="px-4 py-2.5 rounded-2xl bg-cozy-green text-white font-bold text-xs shadow hover:bg-emerald-800 transition-all flex items-center gap-2">
                     <i data-lucide="plus" class="w-4 h-4"></i> Add Custom Task
@@ -356,12 +346,12 @@
             <div id="quests-list" class="space-y-3"></div>
         </section>
 
-        <!-- ================= PAGE 4: ORGANIZED VERTICAL PAPER TIMETABLE (SUN TO FRI) ================= -->
+        <!-- PAGE 4: ORGANIZED VERTICAL PAPER TIMETABLE -->
         <section id="page-schedule" class="page-content hidden space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">Organized Weekly Timetable</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Clean vertical paper timetable arranged chronologically from Saturday to Friday!</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Clean vertical paper timetable arranged chronologically!</p>
                 </div>
                 <div class="flex gap-2">
                     <button onclick="openModal('modal-add-lesson')" class="px-4 py-2 rounded-2xl bg-cozy-green text-white font-bold text-xs shadow hover:bg-emerald-800 transition-all">
@@ -377,13 +367,12 @@
                 <div id="printable-area" class="vertical-paper w-full max-w-[720px] min-h-[900px] p-8 md:p-12 rounded-3xl space-y-6">
                     <div class="flex justify-between items-start border-b-2 border-dashed border-[#C5BCA8] pb-6">
                         <div class="paper-margin-line pl-4">
-                            <span class="text-xs font-handwriting text-2xl text-cozy-accent">Cozy Organized Schedule (Sun - Fri) ☕</span>
+                            <span class="text-xs font-handwriting text-2xl text-cozy-accent">Cozy Organized Schedule ☕</span>
                             <h2 class="text-3xl font-bold font-title text-cozy-brown dark:text-amber-100" id="paper-student-name">Student's Schedule</h2>
                         </div>
                         <div class="text-4xl select-none">📌</div>
                     </div>
                     
-                    <!-- Chronologically Arranged Days -->
                     <div class="space-y-6" id="vertical-schedule-list"></div>
 
                     <div class="pt-8 border-t-2 border-dashed border-[#C5BCA8] flex justify-between items-center text-xs font-handwriting text-xl text-slate-500">
@@ -394,10 +383,9 @@
             </div>
         </section>
 
-        <!-- ================= PAGE 5: FOCUS TIMER & DISTINCT AUDIO ================= -->
+        <!-- PAGE 5: FOCUS TIMER & AUDIO -->
         <section id="page-timer" class="page-content hidden space-y-6">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Focus Timer Card -->
                 <div class="lg:col-span-2 cozy-card p-8 text-center space-y-6">
                     <div class="inline-flex p-1.5 bg-[#F2EBDC] dark:bg-stone-800 rounded-2xl gap-1 flex-wrap justify-center border border-[#E2D6C0] dark:border-stone-700">
                         <button onclick="setTimerMode('pomodoro')" id="tmode-pomodoro" class="timer-mode-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-cozy-green text-white">🍅 Study (25m)</button>
@@ -426,7 +414,6 @@
                     </div>
                 </div>
 
-                <!-- Upgraded Distinct Sound Synthesizer -->
                 <div class="cozy-card p-6 space-y-4 flex flex-col justify-between">
                     <div>
                         <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100 flex items-center gap-2">🎧 Distinct Ambient Sounds</h3>
@@ -458,18 +445,18 @@
                     </div>
 
                     <div class="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20 text-[10px] text-amber-800 dark:text-amber-300 font-semibold">
-                        🔔 Includes acoustic chord chime upon timer finish!
+                        🔔 Acoustic chime triggers when focus timer completes!
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= PAGE 6: 3D ROOM BUILDER ================= -->
+        <!-- PAGE 6: 3D ROOM BUILDER (UPGRADED HIGH QUALITY & EMPTY CANVAS) -->
         <section id="page-sim3d" class="page-content hidden space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">3D Sanctuary Builder</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Start with 100 coins! Complete study sessions to earn thousands for furniture.</p>
+                    <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">3D Sanctuary Builder (4K High Quality)</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Starts completely empty. Build your custom library, gaming setup, or office from scratch!</p>
                 </div>
                 <div class="px-4 py-2 rounded-2xl bg-cozy-yellow border border-amber-300 text-stone-900 text-xs font-bold shadow-sm">
                     🪙 <span id="sim3d-coins">100</span> Coins
@@ -477,14 +464,13 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 cozy-card p-3 flex flex-col justify-between relative overflow-hidden h-[500px]">
+                <div class="lg:col-span-2 cozy-card p-3 flex flex-col justify-between relative overflow-hidden h-[520px]">
                     <div class="flex justify-between items-center z-10 bg-white/90 dark:bg-stone-900/90 p-2.5 rounded-2xl border border-cozy-border dark:border-stone-700 backdrop-blur-sm">
-                        <span class="text-xs font-bold text-cozy-brown dark:text-amber-100 flex items-center gap-1.5">🏠 Sanctuary Room</span>
+                        <span class="text-xs font-bold text-cozy-brown dark:text-amber-100 flex items-center gap-1.5">🏠 Blank Room Canvas</span>
                         <div class="flex gap-2">
-                            <button onclick="applyRoomTheme('cottage')" class="px-2.5 py-1 rounded-xl bg-emerald-100 text-emerald-800 text-[10px] font-bold">Cottage</button>
-                            <button onclick="applyRoomTheme('gaming')" class="px-2.5 py-1 rounded-xl bg-purple-100 text-purple-800 text-[10px] font-bold">Gaming</button>
+                            <button onclick="clearRoomCanvas()" class="px-2.5 py-1 rounded-xl bg-red-100 text-red-800 text-[10px] font-bold">Clear All</button>
                             <button onclick="rotate3DRoom()" class="px-3 py-1 rounded-xl bg-cozy-green text-white text-xs font-bold flex items-center gap-1 shadow-sm">
-                                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i> Rotate View
+                                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i> Rotate Room
                             </button>
                         </div>
                     </div>
@@ -492,31 +478,41 @@
                     <div id="threejs-container" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"></div>
 
                     <div class="z-10 bg-white/90 dark:bg-stone-900/90 p-2.5 rounded-2xl border border-cozy-border dark:border-stone-700 text-xs text-cozy-brown dark:text-amber-100 flex justify-between items-center font-semibold backdrop-blur-sm">
-                        <span>Drag to orbit view</span>
+                        <span>High Quality 4K Mesh Rendering</span>
                         <span id="placed-items-count" class="text-cozy-green dark:text-emerald-400 font-bold">0 Items Placed</span>
                     </div>
                 </div>
 
-                <div class="cozy-card p-5 space-y-4 flex flex-col h-[500px]">
+                <!-- Categorized Shop Items -->
+                <div class="cozy-card p-5 space-y-3 flex flex-col h-[520px]">
                     <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100 flex items-center gap-2">
-                        🛍️ Real-Life Furniture Store
+                        🛍️ Catalog Store
                     </h3>
-                    <div class="space-y-3 overflow-y-auto pr-1 flex-1" id="shop-3d-items"></div>
+
+                    <!-- Category Selector Tabs -->
+                    <div class="flex gap-1 overflow-x-auto pb-1 text-[11px] font-bold border-b border-cozy-border dark:border-stone-700">
+                        <button onclick="setShopCategory('all')" id="shop-cat-all" class="shop-cat-btn px-2.5 py-1 rounded-lg bg-cozy-green text-white">All</button>
+                        <button onclick="setShopCategory('library')" id="shop-cat-library" class="shop-cat-btn px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300">Library 📚</button>
+                        <button onclick="setShopCategory('gaming')" id="shop-cat-gaming" class="shop-cat-btn px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300">Gaming 🎮</button>
+                        <button onclick="setShopCategory('tech')" id="shop-cat-tech" class="shop-cat-btn px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300">Devices 💻</button>
+                        <button onclick="setShopCategory('decor')" id="shop-cat-decor" class="shop-cat-btn px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 text-slate-600 dark:text-stone-300">Decor 🪴</button>
+                    </div>
+
+                    <div class="space-y-2.5 overflow-y-auto pr-1 flex-1" id="shop-3d-items"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= PAGE 7: PROFILE & SETTINGS (WITH PHOTO UPLOAD) ================= -->
+        <!-- PAGE 7: PROFILE & SETTINGS (WITH STREAK SETTER & EDITABLE DATA) -->
         <section id="page-profile" class="page-content hidden space-y-6">
             <h1 class="text-2xl font-bold text-cozy-brown dark:text-amber-100">Profile Settings</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Profile Customization -->
                 <div class="cozy-card p-6 space-y-4">
-                    <h3 class="font-bold text-sm text-cozy-brown dark:text-amber-100">Edit Profile & Avatar</h3>
+                    <h3 class="font-bold text-sm text-cozy-brown dark:text-amber-100">Edit Profile & Streak</h3>
                     
                     <div class="space-y-4 text-xs font-semibold">
-                        <!-- Profile Image Preview & File Upload -->
                         <div class="flex items-center gap-4 p-3 bg-cozy-bg dark:bg-stone-900 rounded-2xl border border-cozy-border dark:border-stone-700">
                             <div id="profile-preview-container" class="w-16 h-16 rounded-full bg-cozy-yellow flex items-center justify-center text-3xl overflow-hidden border-2 border-cozy-green shadow-sm">
                                 <span id="profile-preview-emoji">🦊</span>
@@ -525,6 +521,16 @@
                                 <label class="block text-slate-500 text-[11px]">Upload Custom Photo</label>
                                 <input type="file" id="input-profile-photo" accept="image/*" onchange="handleProfilePhotoUpload(event)" class="text-[11px] text-slate-500 file:mr-2 file:py-1 file:px-3 file:rounded-xl file:border-0 file:text-[10px] file:font-bold file:bg-cozy-green file:text-white hover:file:bg-emerald-800">
                                 <button onclick="clearCustomPhoto()" class="text-[10px] text-red-500 underline font-bold block pt-0.5">Remove Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- STREAK SETTER OPTION -->
+                        <div class="p-3 bg-amber-500/10 dark:bg-amber-950/20 rounded-2xl border border-amber-500/30">
+                            <label class="block text-cozy-brown dark:text-amber-200 font-bold mb-1">🔥 Set Daily Streak Count</label>
+                            <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-2 font-medium">Update your current daily streak whenever you complete a study day.</p>
+                            <div class="flex gap-2">
+                                <input type="number" id="edit-user-streak" min="0" class="w-28 bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-1.5 font-bold text-sm text-center">
+                                <button onclick="setUserStreakDirectly()" class="px-4 py-1.5 rounded-xl bg-cozy-yellow text-stone-900 font-bold hover:bg-amber-300 transition-all">Update Streak</button>
                             </div>
                         </div>
 
@@ -547,7 +553,6 @@
                     </div>
                 </div>
 
-                <!-- Danger Zone -->
                 <div class="cozy-card p-6 space-y-4 border-2 border-red-200 dark:border-red-900/50 bg-red-50/30 dark:bg-red-950/20">
                     <h3 class="font-bold text-sm text-red-600 dark:text-red-400">Danger Zone</h3>
                     <div class="space-y-2 pt-2">
@@ -566,10 +571,13 @@
 
     </main>
 
-    <!-- ================= MODALS ================= -->
+    <!-- MODALS -->
+
+    <!-- Homework Add / Edit Modal -->
     <div id="modal-add-hw" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="cozy-card p-6 w-full max-w-md space-y-4">
-            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Add Homework / Page Range</h3>
+            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100" id="modal-hw-title">Add Homework / Page Range</h3>
+            <input type="hidden" id="input-hw-edit-id" value="">
             <div class="space-y-3 text-xs font-semibold">
                 <div><label class="block text-slate-500 mb-1">Subject Name</label><input type="text" id="input-hw-subject" placeholder="e.g. Mathematics" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2"></div>
                 <div><label class="block text-slate-500 mb-1">Pages Range / Assignments</label><input type="text" id="input-hw-pages" placeholder="e.g. Pages 42 to 48" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2"></div>
@@ -577,19 +585,22 @@
             </div>
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="closeModal('modal-add-hw')" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-500">Cancel</button>
-                <button onclick="saveNewHomework()" class="px-4 py-2 rounded-xl text-xs font-bold bg-cozy-green text-white hover:bg-emerald-800">Save</button>
+                <button onclick="saveNewHomework()" class="px-4 py-2 rounded-xl text-xs font-bold bg-cozy-green text-white hover:bg-emerald-800">Save Homework Card</button>
             </div>
         </div>
     </div>
 
+    <!-- Task Modal (XP and Coins automatically picked by system) -->
     <div id="modal-add-quest" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="cozy-card p-6 w-full max-w-md space-y-4">
-            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Create Task</h3>
+            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Create Custom Task</h3>
             <div class="space-y-3 text-xs font-semibold">
-                <div><label class="block text-slate-500 mb-1">Task Title</label><input type="text" id="input-quest-title" placeholder="e.g. Finish Physics Chapter 3" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2"></div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div><label class="block text-slate-500 mb-1">XP Reward</label><input type="number" id="input-quest-xp" value="100" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2"></div>
-                    <div><label class="block text-slate-500 mb-1">Coin Reward</label><input type="number" id="input-quest-coins" value="150" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2"></div>
+                <div>
+                    <label class="block text-slate-500 mb-1">Task Title / Activity</label>
+                    <input type="text" id="input-quest-title" placeholder="e.g. Finish Physics Chapter 3 Exercises" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2">
+                </div>
+                <div class="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-[11px] text-emerald-800 dark:text-emerald-300 font-semibold">
+                    🎲 <strong>Automatic Rewards:</strong> The system will pick XP and Coin rewards automatically upon completion based on activity complexity.
                 </div>
             </div>
             <div class="flex justify-end gap-2 pt-2">
@@ -599,13 +610,12 @@
         </div>
     </div>
 
-    <!-- FAST START TIME SELECTION MODAL FOR TIMETABLE -->
     <div id="modal-add-lesson" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="cozy-card p-6 w-full max-w-md space-y-4">
-            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Add Lesson (Fast Selection)</h3>
+            <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Add Lesson</h3>
             <div class="space-y-3 text-xs font-semibold">
                 <div>
-                    <label class="block text-slate-500 mb-1">Day of Week (Sat - Fri)</label>
+                    <label class="block text-slate-500 mb-1">Day of Week</label>
                     <select id="input-lesson-day" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2">
                         <option value="Sun">Sunday</option>
                         <option value="Sat">Saturday</option>
@@ -621,7 +631,7 @@
                     <input type="text" id="input-lesson-title" placeholder="e.g. Science / Physics" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2">
                 </div>
                 <div>
-                    <label class="block text-slate-500 mb-1">Quick Select Start Time</label>
+                    <label class="block text-slate-500 mb-1">Start Time</label>
                     <select id="input-lesson-time-select" class="w-full bg-cozy-bg dark:bg-stone-900 border-2 border-cozy-border dark:border-stone-700 rounded-xl px-3 py-2">
                         <option value="08:00 AM">08:00 AM</option>
                         <option value="09:00 AM">09:00 AM</option>
@@ -636,8 +646,6 @@
                         <option value="06:00 PM">06:00 PM</option>
                         <option value="07:00 PM">07:00 PM</option>
                         <option value="08:00 PM">08:00 PM</option>
-                        <option value="09:00 PM">09:00 PM</option>
-                        <option value="10:00 PM">10:00 PM</option>
                     </select>
                 </div>
             </div>
@@ -651,7 +659,7 @@
     <div id="modal-summary-paper" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="cozy-card p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto space-y-4">
             <div class="flex justify-between items-center border-b pb-3">
-                <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">All Homework Pages - Summary Paper</h3>
+                <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Homework Pages Summary Sheet</h3>
                 <button onclick="closeModal('modal-summary-paper')" class="text-slate-400 hover:text-red-500">✕</button>
             </div>
             <div id="summary-paper-export" class="vertical-paper p-8 rounded-2xl space-y-4">
@@ -671,7 +679,7 @@
         <div class="cozy-card p-6 w-full max-w-sm text-center space-y-4">
             <div class="text-4xl">⚠️</div>
             <h3 class="font-bold text-base text-cozy-brown dark:text-amber-100">Reset All Data?</h3>
-            <p class="text-xs text-slate-500 font-semibold">This will reset level, coin balance to 100, and clear room items.</p>
+            <p class="text-xs text-slate-500 font-semibold">This will reset levels, coin balance to 100, streak to 1, and clear room items.</p>
             <div class="flex justify-center gap-2 pt-2">
                 <button onclick="closeModal('modal-reset-confirm')" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-500">Cancel</button>
                 <button onclick="executeHardReset()" class="px-4 py-2 rounded-xl text-xs font-bold bg-red-600 text-white">Reset Everything</button>
@@ -681,7 +689,7 @@
 
     <!-- Application Script -->
     <script>
-        // DEFAULT STATE: STARTS WITH 100 COINS AS REQUESTED
+        // DEFAULT STATE: STARTS WITH 100 COINS & EMPTY ROOM AS REQUESTED
         const DEFAULT_DATA = {
             darkMode: false,
             user: { name: "Student", avatar: "🦊", photoUrl: null, bio: "Take it step by step, grab a tea, and enjoy learning.", level: 1, xp: 0, coins: 100, hoursStudied: 0.0, streak: 1 },
@@ -693,16 +701,14 @@
                 { id: "q1", title: "Complete 1 Pomodoro Focus Session", xp: 100, coins: 150, completed: false },
                 { id: "q2", title: "Review All Pending Homework", xp: 80, coins: 100, completed: false }
             ],
-            // ORGANIZED TIMETABLE DAYS: SUN TO FRI
             schedule: {
                 Sun: [{ id: "l1", title: "Mathematics", time: "09:00 AM" }],
                 Mon: [{ id: "l2", title: "Physics / Chemistry", time: "11:00 AM" }],
                 Tue: [{ id: "l3", title: "Biology", time: "01:00 PM" }],
-                Wed: [], 
-                Thu: [], 
-                Fri: []
+                Wed: [], Thu: [], Fri: []
             },
-            room3d: { inventory: ['cozy_desk'] }
+            // EMPTY START ROOM (USER BUILDS BY THEMSELVES)
+            room3d: { inventory: [] }
         };
 
         const STUDY_ADVICES = [
@@ -715,6 +721,7 @@
 
         let state = JSON.parse(localStorage.getItem('cozystudy_island_data')) || DEFAULT_DATA;
         let currentHwFilter = 'all';
+        let currentShopCategory = 'all';
         let currentAdviceIdx = 0;
 
         function getXPForNextLevel(level) { return level * 150; }
@@ -754,7 +761,6 @@
             document.getElementById('summary-paper-student').innerText = `${state.user.name}'s Homework Index`;
             document.getElementById('dash-user-bio').innerText = `"${state.user.bio}"`;
             
-            // Render Profile Image or Emoji
             updateAvatarDisplay();
 
             document.getElementById('sidebar-level').innerText = `Lvl ${state.user.level}`;
@@ -763,7 +769,7 @@
             document.getElementById('sim3d-coins').innerText = state.user.coins.toLocaleString();
             document.getElementById('dash-coins').innerText = `${state.user.coins.toLocaleString()} 🪙`;
             document.getElementById('streak-counter').innerText = state.user.streak;
-            document.getElementById('dash-streak').innerText = `${state.user.streak} Day`;
+            document.getElementById('dash-streak').innerText = `${state.user.streak} Day${state.user.streak === 1 ? '' : 's'}`;
 
             const xpPct = Math.min(100, Math.floor((state.user.xp / nextLevelXP) * 100));
             document.getElementById('sidebar-xp-bar').style.width = `${xpPct}%`;
@@ -783,6 +789,7 @@
             document.getElementById('edit-user-name').value = state.user.name;
             document.getElementById('edit-user-avatar').value = state.user.avatar || '🦊';
             document.getElementById('edit-user-bio').value = state.user.bio;
+            document.getElementById('edit-user-streak').value = state.user.streak;
 
             renderHomework();
             renderQuests();
@@ -792,7 +799,16 @@
             lucide.createIcons();
         }
 
-        // PROFILE PHOTO & AVATAR HANDLERS
+        // USER DIRECTLY SETS STREAK COUNTER
+        function setUserStreakDirectly() {
+            const val = parseInt(document.getElementById('edit-user-streak').value);
+            if (!isNaN(val) && val >= 0) {
+                state.user.streak = val;
+                saveState();
+                showToast(`Streak set to ${val} Day${val === 1 ? '' : 's'}! 🔥`);
+            }
+        }
+
         function updateAvatarDisplay() {
             const sidebarContainer = document.getElementById('sidebar-avatar-container');
             const previewContainer = document.getElementById('profile-preview-container');
@@ -861,13 +877,17 @@
                         ${hw.done ? '<div class="absolute right-3 top-3 text-red-600 font-black border-4 border-red-600 px-2 py-0.5 rounded-xl uppercase tracking-widest text-xs done-stamp">DONE ✨</div>' : ''}
                         <div class="flex justify-between items-start">
                             <span class="px-2.5 py-1 rounded-lg bg-cozy-yellow text-stone-900 font-bold text-[10px]">📖 ${hw.subject}</span>
-                            <button onclick="deleteHomework('${hw.id}')" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="openEditHomeworkModal('${hw.id}')" title="Edit Card" class="text-slate-500 hover:text-cozy-green"><i data-lucide="edit-3" class="w-4 h-4"></i></button>
+                                <button onclick="deleteHomework('${hw.id}')" title="Delete Card" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                            </div>
                         </div>
                         <div>
                             <h4 class="font-bold text-base text-cozy-brown dark:text-amber-100">${hw.pages}</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 font-semibold">${hw.points}</p>
                         </div>
-                        <div class="pt-2 flex justify-end">
+                        <div class="pt-2 flex justify-between items-center">
+                            <button onclick="openEditHomeworkModal('${hw.id}')" class="text-[11px] font-bold text-cozy-brown dark:text-amber-200 underline">Edit Page Range</button>
                             <button onclick="toggleHomework('${hw.id}')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${hw.done ? 'bg-slate-200 dark:bg-stone-800 text-slate-600 dark:text-stone-300' : 'bg-cozy-green text-white hover:bg-emerald-800 shadow-sm'}">
                                 ${hw.done ? 'Mark as Pending' : 'Mark Homework DONE! ✨'}
                             </button>
@@ -896,19 +916,46 @@
             }
         }
 
+        // EDIT EXISTING HOMEWORK
+        function openEditHomeworkModal(id) {
+            const hw = state.homework.find(h => h.id === id);
+            if (hw) {
+                document.getElementById('modal-hw-title').innerText = 'Edit Homework Card';
+                document.getElementById('input-hw-edit-id').value = hw.id;
+                document.getElementById('input-hw-subject').value = hw.subject;
+                document.getElementById('input-hw-pages').value = hw.pages;
+                document.getElementById('input-hw-points').value = hw.points;
+                openModal('modal-add-hw');
+            }
+        }
+
         function saveNewHomework() {
+            const editId = document.getElementById('input-hw-edit-id').value;
             const subject = document.getElementById('input-hw-subject').value.trim();
             const pages = document.getElementById('input-hw-pages').value.trim();
             const points = document.getElementById('input-hw-points').value.trim();
 
             if (!subject || !pages) return;
-            state.homework.push({ id: 'hw_' + Date.now(), subject, pages, points: points || 'No extra points', done: false });
+
+            if (editId) {
+                const existing = state.homework.find(h => h.id === editId);
+                if (existing) {
+                    existing.subject = subject;
+                    existing.pages = pages;
+                    existing.points = points || 'No extra points';
+                }
+                showToast('Homework card updated!');
+            } else {
+                state.homework.push({ id: 'hw_' + Date.now(), subject, pages, points: points || 'No extra points', done: false });
+                showToast('Homework saved!');
+            }
+
+            document.getElementById('input-hw-edit-id').value = '';
             document.getElementById('input-hw-subject').value = '';
             document.getElementById('input-hw-pages').value = '';
             document.getElementById('input-hw-points').value = '';
             closeModal('modal-add-hw');
             saveState();
-            showToast('Homework saved!');
         }
 
         function deleteHomework(id) {
@@ -941,7 +988,6 @@
             });
         }
 
-        // REORDERED CHRONOLOGICAL TIMETABLE (SUNDAY TO FRIDAY)
         const CHRONO_DAYS = [
             { key: 'Sat', name: 'Saturday' },
             { key: 'Sun', name: 'Sunday' },
@@ -1001,20 +1047,41 @@
             saveState();
         }
 
-        // 3D ROOM BUILDER ENGINE
+        // 3D ROOM BUILDER ENGINE (HIGH QUALITY 4K RENDER + CATEGORIZED ITEMS)
         let scene, camera, renderer, roomGroup;
-        const HARD_STORE_ITEMS = [
-            { id: 'cozy_desk', name: 'Wooden Study Table', price: 0, desc: 'Starter wooden desk' },
-            { id: 'mini_fridge', name: 'Retro Mini Fridge', price: 1200, desc: 'Keep drinks cold while studying' },
-            { id: 'desk_lamp', name: 'Warm Reading Lamp', price: 1500, desc: 'Targeted study light source' },
-            { id: 'plant_pot', name: 'Potted Leaf Plant', price: 1800, desc: 'Brings fresh nature into room' },
-            { id: 'cozy_carpet', name: 'Fluffy Soft Carpet', price: 2500, desc: 'Warm patterned rug' },
-            { id: 'bean_bag', name: 'Plush Lounge Armchair', price: 3500, desc: 'Relaxing reading bean bag' },
-            { id: 'wall_art', name: 'Nature Landscape Frame', price: 4200, desc: 'Hanging wall frame' },
-            { id: 'bookshelf_real', name: 'Large Library Bookshelf', price: 7500, desc: 'Multi-tiered wooden book shelf' },
-            { id: 'water_dispenser', name: 'Hydration Station Cooler', price: 9000, desc: 'Pure fresh water dispenser' },
-            { id: 'gaming_setup', name: 'RGB Dual-Monitor Battlestation', price: 15000, desc: 'Ultimate gaming & study rig' }
+
+        const SHOP_ITEMS_CATEGORIZED = [
+            // LIBRARY CATEGORY
+            { id: 'lib_bookshelf', name: 'Oak Grand Bookshelf', category: 'library', price: 3500, desc: 'Multi-tiered solid oak library book tower' },
+            { id: 'lib_desk', name: 'Classic Mahogany Desk', category: 'library', price: 4000, desc: 'Heavy solid wood library reading desk' },
+            { id: 'lib_globe', name: 'Brass Antique Globe', category: 'library', price: 500, desc: 'Rotating world globe on brass stand' },
+            { id: 'lib_reading_chair', name: 'Leather Reading Armchair', category: 'library', price: 8340, desc: 'Comfortable dark leather armchair' },
+
+            // GAMING CATEGORY
+            { id: 'game_battlestation', name: 'RGB Gaming Rig', category: 'gaming', price: 28000, desc: 'Dual-monitor 4K desktop setup with neon glow' },
+            { id: 'game_chair', name: 'Ergonomic Gaming Chair', category: 'gaming', price: 15000, desc: 'Reclining race-style cushion seat' },
+            { id: 'game_speakers', name: 'Surround Sound Tower', category: 'gaming', price: 5300, desc: 'Bass-boosted acoustics tower' },
+
+            // DEVICES & ELECTRONICS CATEGORY
+            { id: 'tech_laptop', name: 'Pro Ultra Laptop', category: 'tech', price: 72000, desc: 'High-performance silver aluminum laptop' },
+            { id: 'tech_printer', name: 'Smart Wireless Printer', category: 'tech', price: 4500, desc: 'Color inkjet document scanner' },
+            { id: 'tech_tablet', name: 'Digital Drawing Tablet', category: 'tech', price: 18000, desc: 'Graphics tablet with stylus pen' },
+
+            // GENERAL DECOR CATEGORY
+            { id: 'decor_plant', name: 'Monstera Potted Plant', category: 'decor', price: 830, desc: 'Lush tropical potted indoor plant' },
+            { id: 'decor_lamp', name: 'Warm Ambient Lamp', category: 'decor', price: 1600, desc: 'Soft glowing study desk lamp' },
+            { id: 'decor_rug', name: 'Patterned Wool Carpet', category: 'decor', price: 920, desc: 'Soft circular decorative rug' }
         ];
+
+        function setShopCategory(cat) {
+            currentShopCategory = cat;
+            document.querySelectorAll('.shop-cat-btn').forEach(b => {
+                b.classList.remove('bg-cozy-green', 'text-white');
+                b.classList.add('bg-stone-100', 'dark:bg-stone-800', 'text-slate-600', 'dark:text-stone-300');
+            });
+            document.getElementById(`shop-cat-${cat}`).classList.add('bg-cozy-green', 'text-white');
+            render3DShop();
+        }
 
         function init3DRoom() {
             const container = document.getElementById('threejs-container');
@@ -1029,15 +1096,22 @@
             camera.position.set(10, 10, 10);
             camera.lookAt(0, 0, 0);
 
-            renderer = new THREE.WebGLRenderer({ antialias: true });
+            // High Quality Renderer with Shadows
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
             renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
             container.appendChild(renderer.domElement);
 
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+            // Real Ambient & Direct Light
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
             scene.add(ambientLight);
 
-            const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
-            dirLight.position.set(10, 20, 10);
+            const dirLight = new THREE.DirectionalLight(0xfff5ea, 0.9);
+            dirLight.position.set(12, 18, 10);
+            dirLight.castShadow = true;
+            dirLight.shadow.mapSize.width = 1024;
+            dirLight.shadow.mapSize.height = 1024;
             scene.add(dirLight);
 
             roomGroup = new THREE.Group();
@@ -1050,53 +1124,106 @@
         function buildRoomMesh() {
             while(roomGroup.children.length > 0){ roomGroup.remove(roomGroup.children[0]); }
 
-            const floor = new THREE.Mesh(new THREE.BoxGeometry(6, 0.2, 6), new THREE.MeshLambertMaterial({ color: 0xD0B8A8 }));
+            // High quality room base
+            const floorMat = new THREE.MeshStandardMaterial({ color: 0xD0B8A8, roughness: 0.4 });
+            const floor = new THREE.Mesh(new THREE.BoxGeometry(6, 0.2, 6), floorMat);
             floor.position.y = -0.1;
+            floor.receiveShadow = true;
             roomGroup.add(floor);
 
-            const wallMat = new THREE.MeshLambertMaterial({ color: state.darkMode ? 0x2A3D2C : 0xDFE8CC });
+            const wallMat = new THREE.MeshStandardMaterial({ color: state.darkMode ? 0x2A3D2C : 0xDFE8CC, roughness: 0.6 });
             const wall1 = new THREE.Mesh(new THREE.BoxGeometry(6, 4, 0.2), wallMat);
             wall1.position.set(0, 2, -3);
+            wall1.receiveShadow = true;
             roomGroup.add(wall1);
 
             const wall2 = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4, 6), wallMat);
             wall2.position.set(-3, 2, 0);
+            wall2.receiveShadow = true;
             roomGroup.add(wall2);
 
             let count = 0;
             state.room3d.inventory.forEach(itemId => {
                 count++;
-                if (itemId === 'cozy_desk') {
-                    const top = new THREE.Mesh(new THREE.BoxGeometry(2.5, 0.15, 1.4), new THREE.MeshLambertMaterial({ color: 0x7F5283 }));
-                    top.position.set(0, 1.2, -1.8);
-                    roomGroup.add(top);
-                }
-                if (itemId === 'mini_fridge') {
-                    const fridge = new THREE.Mesh(new THREE.BoxGeometry(1.2, 2.2, 1.2), new THREE.MeshLambertMaterial({ color: 0xFFC0D9 }));
-                    fridge.position.set(-2, 1.1, -1.8);
-                    roomGroup.add(fridge);
-                }
-                if (itemId === 'gaming_setup') {
-                    const m1 = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.6, 0.1), new THREE.MeshLambertMaterial({ color: 0x111111 }));
-                    m1.position.set(-0.5, 1.7, -1.8);
-                    roomGroup.add(m1);
-                    const pc = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.8, 0.8), new THREE.MeshLambertMaterial({ color: 0x8833FF }));
-                    pc.position.set(1.1, 1.6, -1.8);
-                    roomGroup.add(pc);
-                }
-                if (itemId === 'bookshelf_real') {
-                    const shelf = new THREE.Mesh(new THREE.BoxGeometry(1.4, 3.2, 0.8), new THREE.MeshLambertMaterial({ color: 0x8D4925 }));
-                    shelf.position.set(1.8, 1.6, -2.2);
+                
+                // Library Furniture Renderings
+                if (itemId === 'lib_bookshelf') {
+                    const shelf = new THREE.Mesh(new THREE.BoxGeometry(1.6, 3.4, 0.8), new THREE.MeshStandardMaterial({ color: 0x5C3D2E, roughness: 0.5 }));
+                    shelf.position.set(-1.8, 1.7, -2.2);
+                    shelf.castShadow = true;
                     roomGroup.add(shelf);
                 }
-                if (itemId === 'bean_bag') {
-                    const bag = new THREE.Mesh(new THREE.SphereGeometry(0.7, 16, 16), new THREE.MeshLambertMaterial({ color: 0xE07A5F }));
-                    bag.position.set(1.5, 0.5, 1.2);
-                    roomGroup.add(bag);
+                if (itemId === 'lib_desk') {
+                    const desk = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.3, 1.2), new THREE.MeshStandardMaterial({ color: 0x4A2E1B, roughness: 0.3 }));
+                    desk.position.set(0, 0.65, -1.8);
+                    desk.castShadow = true;
+                    roomGroup.add(desk);
                 }
-                if (itemId === 'cozy_carpet') {
-                    const rug = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 1.8, 0.05, 32), new THREE.MeshLambertMaterial({ color: 0xF2CC8F }));
-                    rug.position.set(0, 0.03, 0);
+                if (itemId === 'lib_globe') {
+                    const globe = new THREE.Mesh(new THREE.SphereGeometry(0.35, 32, 32), new THREE.MeshStandardMaterial({ color: 0x2E86AB, roughness: 0.2 }));
+                    globe.position.set(0.6, 1.6, -1.8);
+                    globe.castShadow = true;
+                    roomGroup.add(globe);
+                }
+                if (itemId === 'lib_reading_chair') {
+                    const chair = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.2, 1.2), new THREE.MeshStandardMaterial({ color: 0x2B1B17, roughness: 0.4 }));
+                    chair.position.set(1.8, 0.6, -1.2);
+                    chair.castShadow = true;
+                    roomGroup.add(chair);
+                }
+
+                // Gaming Renderings
+                if (itemId === 'game_battlestation') {
+                    const rig = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.8, 0.1), new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.1, metalness: 0.8 }));
+                    rig.position.set(-0.2, 1.7, -2.2);
+                    roomGroup.add(rig);
+                }
+                if (itemId === 'game_chair') {
+                    const gChair = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.8, 1.0), new THREE.MeshStandardMaterial({ color: 0xE07A5F, roughness: 0.5 }));
+                    gChair.position.set(-0.2, 0.9, -0.8);
+                    gChair.castShadow = true;
+                    roomGroup.add(gChair);
+                }
+                if (itemId === 'game_speakers') {
+                    const spk = new THREE.Mesh(new THREE.BoxGeometry(0.4, 1.4, 0.4), new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.3 }));
+                    spk.position.set(1.2, 0.7, -2.2);
+                    spk.castShadow = true;
+                    roomGroup.add(spk);
+                }
+
+                // Tech / Devices
+                if (itemId === 'tech_laptop') {
+                    const laptop = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.05, 0.5), new THREE.MeshStandardMaterial({ color: 0xD1D5DB, metalness: 0.9, roughness: 0.2 }));
+                    laptop.position.set(-0.5, 1.35, -1.8);
+                    roomGroup.add(laptop);
+                }
+                if (itemId === 'tech_printer') {
+                    const printer = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.5, 0.7), new THREE.MeshStandardMaterial({ color: 0xF3F4F6, roughness: 0.3 }));
+                    printer.position.set(1.8, 0.25, 0.8);
+                    printer.castShadow = true;
+                    roomGroup.add(printer);
+                }
+                if (itemId === 'tech_tablet') {
+                    const tab = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.03, 0.4), new THREE.MeshStandardMaterial({ color: 0x1F2937 }));
+                    tab.position.set(0.2, 1.33, -1.6);
+                    roomGroup.add(tab);
+                }
+
+                // Decor
+                if (itemId === 'decor_plant') {
+                    const plant = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.8, 16), new THREE.MeshStandardMaterial({ color: 0x2C5E3B }));
+                    plant.position.set(-2.2, 0.4, 1.8);
+                    plant.castShadow = true;
+                    roomGroup.add(plant);
+                }
+                if (itemId === 'decor_lamp') {
+                    const lamp = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.3, 0.9, 16), new THREE.MeshStandardMaterial({ color: 0xF2CC8F, roughness: 0.2 }));
+                    lamp.position.set(-0.8, 1.75, -1.8);
+                    roomGroup.add(lamp);
+                }
+                if (itemId === 'decor_rug') {
+                    const rug = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 1.8, 0.02, 32), new THREE.MeshStandardMaterial({ color: 0xE8F3E8, roughness: 0.9 }));
+                    rug.position.set(0, 0.01, 0);
                     roomGroup.add(rug);
                 }
             });
@@ -1111,17 +1238,21 @@
 
         function rotate3DRoom() { if (roomGroup) roomGroup.rotation.y += Math.PI / 4; }
 
-        function applyRoomTheme(theme) {
-            if (theme === 'cottage') state.room3d.inventory = ['cozy_desk', 'mini_fridge', 'bookshelf_real', 'plant_pot'];
-            else if (theme === 'gaming') state.room3d.inventory = ['cozy_desk', 'gaming_setup', 'bean_bag', 'cozy_carpet'];
+        function clearRoomCanvas() {
+            state.room3d.inventory = [];
             saveState();
             buildRoomMesh();
-            showToast(`Applied ${theme.toUpperCase()} Preset!`);
+            showToast('Cleared 3D Room Canvas!');
         }
 
         function render3DShop() {
             const container = document.getElementById('shop-3d-items');
-            container.innerHTML = HARD_STORE_ITEMS.map(item => {
+            let items = SHOP_ITEMS_CATEGORIZED;
+            if (currentShopCategory !== 'all') {
+                items = items.filter(i => i.category === currentShopCategory);
+            }
+
+            container.innerHTML = items.map(item => {
                 const unlocked = state.room3d.inventory.includes(item.id);
                 return `
                     <div class="p-3 rounded-2xl bg-cozy-bg dark:bg-stone-800 border border-cozy-border dark:border-stone-700 flex items-center justify-between">
@@ -1151,7 +1282,7 @@
             }
         }
 
-        // QUESTS ENGINE
+        // QUESTS ENGINE (AUTOMATIC RANDOM XP & COIN PICKER)
         function renderQuests() {
             const container = document.getElementById('quests-list');
             container.innerHTML = state.quests.map(q => `
@@ -1182,13 +1313,17 @@
 
         function saveNewQuest() {
             const title = document.getElementById('input-quest-title').value.trim();
-            const xp = parseInt(document.getElementById('input-quest-xp').value) || 100;
-            const coins = parseInt(document.getElementById('input-quest-coins').value) || 150;
-
             if (!title) return;
-            state.quests.push({ id: 'q_' + Date.now(), title, xp, coins, completed: false });
+
+            // SYSTEM AUTOMATICALLY PICKS XP AND COINS RANDOMLY
+            const autoXP = Math.floor(Math.random() * 80) + 60;   // Random 60-140 XP
+            const autoCoins = Math.floor(Math.random() * 120) + 80; // Random 80-200 Coins
+
+            state.quests.push({ id: 'q_' + Date.now(), title, xp: autoXP, coins: autoCoins, completed: false });
+            document.getElementById('input-quest-title').value = '';
             closeModal('modal-add-quest');
             saveState();
+            showToast(`Task saved! System assigned +${autoXP} XP & +${autoCoins} Coins reward.`);
         }
 
         function deleteQuest(id) {
@@ -1196,7 +1331,7 @@
             saveState();
         }
 
-        // IMPROVED DISTINCT AUDIO SYNTHESIZER
+        // AUDIO ENGINE
         let audioCtx = null;
         let activeNodes = { rain: null, wind: null, white: null };
 
@@ -1244,11 +1379,11 @@
                     let lastOut = 0.0;
                     for (let i = 0; i < bufferSize; i++) {
                         let white = Math.random() * 2 - 1;
-                        data[i] = (lastOut + (0.02 * white)) / 1.02; // Brown noise filter
+                        data[i] = (lastOut + (0.02 * white)) / 1.02;
                         lastOut = data[i];
                         data[i] *= 0.4;
                     }
-                } else { // White Noise
+                } else {
                     for (let i = 0; i < bufferSize; i++) {
                         data[i] = (Math.random() * 2 - 1) * 0.06;
                     }
@@ -1318,7 +1453,7 @@
                         playAlarmSound();
                         state.user.hoursStudied += (timerTotalSeconds / 3600);
                         awardRewards(120, 200);
-                        showToast('Timer Finished! Take a well-deserved break.');
+                        showToast('Timer Finished! Take a break.');
                         resetTimer();
                     }
                 }, 1000);
@@ -1340,7 +1475,7 @@
             ring.style.strokeDashoffset = 628 - (timerSeconds / timerTotalSeconds) * 628;
         }
 
-        // PROFILE & LEVELING SYSTEM
+        // PROFILE & LEVELING
         function saveUserProfile() {
             state.user.name = document.getElementById('edit-user-name').value.trim() || state.user.name;
             state.user.avatar = document.getElementById('edit-user-avatar').value.trim() || state.user.avatar;
@@ -1367,7 +1502,6 @@
         function resetHomeworkOnly() { state.homework = []; saveState(); showToast('Notebook cleared.'); }
         function executeHardReset() { localStorage.removeItem('cozystudy_island_data'); state = JSON.parse(JSON.stringify(DEFAULT_DATA)); saveState(); closeModal('modal-reset-confirm'); showToast('App reset!'); }
 
-        // NAVIGATION SWITCHER
         function switchTab(tabId, btnElement) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
             document.getElementById(`page-${tabId}`).classList.remove('hidden');
